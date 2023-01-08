@@ -18,7 +18,7 @@ export function Header() {
             <ul className="flex items-center justify-center gap-4">
               <HeaderLink link="/" icon={<HouseSimple />} title="home" />
               <HeaderLink
-                link="/auth"
+                link="/account/login"
                 icon={<Users />}
                 title="authentication"
               />
