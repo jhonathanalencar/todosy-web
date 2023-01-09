@@ -35,7 +35,7 @@ export function Header() {
           )}
 
           {!matches && isToggled ? (
-            <div className="fixed top-0 right-0 h-screen max-w-[300px] w-full bg-primary-600 flex flex-col p-4">
+            <div className="fixed top-0 right-0 z-10 h-screen max-w-[300px] w-full bg-primary-600 flex flex-col p-4 shadow">
               <button
                 type="button"
                 aria-label="close"
