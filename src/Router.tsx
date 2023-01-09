@@ -1,9 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
 import { DefaultLayout } from "./layouts/DefaultLayout";
-import { Home } from "./pages/Home";
-import { Login } from "./pages/Login";
-import { NotFound } from "./pages/NotFound";
-import { SignUp } from "./pages/SignUp";
+import { getListsQuery, Home, Login, SignUp, ErrorBoundary } from "./pages";
 
 export function Router() {
   const router = createBrowserRouter([
@@ -14,6 +12,7 @@ export function Router() {
         {
           index: true,
           element: <Home />,
+          loader: getListsQuery,
         },
         {
           path: "account",
@@ -29,7 +28,7 @@ export function Router() {
           ],
         },
       ],
-      errorElement: <NotFound />,
+      errorElement: <ErrorBoundary />,
     },
   ]);
 

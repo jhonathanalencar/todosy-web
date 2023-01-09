@@ -1,9 +1,10 @@
-import { HouseSimple, Users, List, X } from "phosphor-react";
 import { useState } from "react";
-import { useMediaQuery } from "../hooks/useMediaQuery";
-import { HeaderLink } from "./HeaderLink";
+import { Link } from "react-router-dom";
+import { HouseSimple, Users, List, X } from "phosphor-react";
 
-import { Logo } from "./Logo";
+import { useMediaQuery } from "../hooks/useMediaQuery";
+
+import { HeaderLink, Logo } from "./";
 
 export function Header() {
   const matches = useMediaQuery("(min-width: 45em)");
@@ -11,7 +12,7 @@ export function Header() {
 
   return (
     <header className="relative w-full flex bg-secondary-600 shadow-md">
-      <div className="w-full max-w-5xl mx-auto px-4 py-6 flex justify-between items-center">
+      <div className="w-full max-w-5xl mx-auto px-4 lg:px-0 py-6 flex justify-between items-center">
         <Logo />
         <nav className="flex items-center justify-center">
           {matches ? (
@@ -48,7 +49,7 @@ export function Header() {
               </button>
               <ul className="flex flex-col gap-2 mt-12 ">
                 <li className="py-2 pl-6 hover:bg-slate-500 focus-within:bg-slate-500">
-                  <a href="/" className="flex items-center gap-4 outline-none">
+                  <Link to="/" className="flex items-center gap-4 outline-none">
                     <HouseSimple
                       className="w-6 h-6 text-neutral-200"
                       weight="fill"
@@ -56,15 +57,18 @@ export function Header() {
                     <span className="text-neutral-200 font-semibold text-lg">
                       Home
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="py-2 pl-6 hover:bg-slate-500 focus-within:bg-slate-500">
-                  <a href="/" className="flex items-center gap-4 outline-none">
+                  <Link
+                    to="/account"
+                    className="flex items-center gap-4 outline-none"
+                  >
                     <Users className="w-6 h-6 text-neutral-200" weight="fill" />
                     <span className="text-neutral-200 font-semibold text-lg">
                       Login
                     </span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

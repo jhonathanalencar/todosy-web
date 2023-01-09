@@ -3,7 +3,7 @@ import { SmileySad } from "phosphor-react";
 
 export function NotFound() {
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center gap-4 md:gap-6">
+    <section className="w-full h-screen flex flex-col items-center justify-center gap-4 md:gap-6">
       <strong className="text-6xl text-primary-400 md:text-7xl">404</strong>
       <h1 className="text-3xl font-black md:text-4xl">Page Not Found</h1>
       <SmileySad
@@ -16,6 +16,6 @@ export function NotFound() {
       >
         Go back home
       </Link>
-    </div>
+    </section>
   );
 }
