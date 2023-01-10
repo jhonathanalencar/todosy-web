@@ -26,7 +26,6 @@ export async function getListsQuery() {
     return data;
   } catch (error) {
     if (error instanceof AxiosError) {
-      console.log(error);
       if (error.response?.status === 401) {
         return redirect("/account/login");
       } else {
